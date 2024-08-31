@@ -1,0 +1,991 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXORA</title>
+    <link rel="stylesheet" href="output.css" />
+    <script
+      src="https://kit.fontawesome.com/5a0914105d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .hero {
+        width: 100%;
+
+        background-image: linear-gradient(
+            rgba(41, 41, 220, 0.662),
+            rgba(9, 210, 9, 0.662)
+          ),
+          url(images/image.jpg);
+        background-size: cover;
+        /* background-position: center; */
+        /* background-position: 8% 7%; */
+        /* object-position: 8% 95%; */
+        color: #fff;
+        overflow: hidden;
+      }
+
+      .pinkbg {
+        border-bottom-left-radius: 50px;
+      }
+
+      .highlight {
+        position: relative;
+        color: white;
+      }
+
+      .highlight::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        transform: scale(1.07, 1.05) skewX(-15deg);
+        background-image: var(--gradient-primary);
+      }
+
+      :root {
+        --gradient-primary: linear-gradient(to top left, #db2777, #fbb4d8);
+      }
+
+      .btn-container:hover {
+        .btn-bg {
+          width: 120px;
+          transition: all 0.3s ease;
+        }
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="overflow-hidden">
+      <!-- hero -->
+      <div class="relative flex h-[700px] w-full">
+        <div class="bg-white h-full w-[60%]"></div>
+        <div class="bg-[#FBB4D8] h-full w-[40%] pinkbg"></div>
+        <div class="absolute z-10 w-full">
+          <div class="">
+            <nav class="flex mt-4 mx-auto items-center w-[78%] justify-center">
+              <div class="flex justify-between w-full">
+                <h1
+                  class="text-[23px] font-bold uppercase text-[#e95ea3] relative"
+                >
+                  <img
+                    src="images/name3.png"
+                    class="w-6 absolute z-10 -left-[17px] -top-1"
+                  />
+                  NEXORA
+                </h1>
+
+                <ul
+                  class="pt-3 hidden md:flex gap-5 items-center uppercase text-sm"
+                >
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Home
+                  </li>
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Supplement
+                  </li>
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Feature
+                  </li>
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Ingredients
+                  </li>
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Order
+                  </li>
+                  <li
+                    class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
+                  >
+                    Contact
+                  </li>
+                </ul>
+
+                <div class="hidden md:flex gap-6 items-center">
+                  <img src="images/cart-icon.png" class="w-8 cursor-pointer" />
+
+                  <button
+                    class="p-3 px-10 bg-[#e95ea3] uppercase rounded-full text-white font-bold opacity-90 hover:opacity-100"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </div>
+            </nav>
+
+            <div
+              class="flex flex-col md:flex-row mt-20 md:mt-10 justify-center items-center mx-auto gap-6"
+            >
+              <div
+                class="flex flex-col justify-center pl-5 lg:pl-28 gap-7 px-4 md:px-0 w-full md:w-[42%] items-center"
+              >
+                <h1
+                  class="textSize text-5xl sm:text-6xl md:text-7xl self-start font-bold text-left text-[#e95ea3]"
+                >
+                  Gain
+                  <span class="highlight">Weight</span>
+                  <br />
+
+                  The <span class="pt-2">Right</span> <br />
+                  Way
+                </h1>
+
+                <p class="self-start">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eveniet culpa quo reiciendis sed vitae voluptatibus at
+                  laudantium necessitatibus officiis fugiat.
+                </p>
+
+                <!-- <button
+                  class="bg-[#FA89A6] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start"
+                >
+                  Donate Now &#8594;
+                </button> -->
+              </div>
+
+              <!-- image -->
+
+              <div class="w-full md:w-[50%] flex justify-center items-center">
+                <img src="images/img (9).png" class="w-[270px] md:w-[520px]" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- featured -->
+
+      <section class="w-[78%] my-20 flex items-center justify-center mx-auto">
+        <div class="">
+          <div class="text-center">
+            <h1 class="font-bold text-[#db2777] text-xl">
+              RECOMMENDED FOR YOU
+            </h1>
+            <p class="">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-12 mt-8"
+          >
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- about -->
+
+      <section
+        class="bg-[#FBB4D8] bg-opacity-20 mt-10 flex flex-col md:flex-row items-center justify-center mx-auto py-16"
+      >
+        <div
+          class="w-full lg:w-[78%] flex flex-col md:flex-row px-7 md:px-0 justify-between items-center"
+        >
+          <div class="">
+            <img
+              src="images/Health_Products_Health_Logo__6_-removebg-preview.png"
+              class="w-[420px]"
+            />
+          </div>
+
+          <div class="w-full lg:w-[45%]">
+            <h2 class="textSize text-[#e95ea3] self-start font-bold text-left">
+              ABOUT NEXORA
+            </h2>
+            <h1 class="font-bold text-4xl md:text-5xl text-[#db2777]">
+              Supercharge <br />
+              Your Health
+            </h1>
+
+            <p class="self-start py-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+              culpa quo reiciendis sed vitae voluptatibus at laudantium
+              necessitatibus officiis fugiat.
+            </p>
+            <p class="self-start py-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+              culpa quo reiciendis sed vitae voluptatibus at laudantium
+              necessitatibus officiis fugiat.
+            </p>
+
+            <!-- <button
+              class="bg-[#fa89a6] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-full self-start"
+            >
+              Donate Now &#8594;
+            </button> -->
+
+            <button
+              class="p-2 px-10 bg-[#db2777] uppercase rounded-full text-white font-bold opacity-90 mt-3 hover:opacity-100 text-sm"
+            >
+              Buy Now &#8594;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- benefits -->
+      <section
+        class="bg-[#FBB4D8] bg-opacity-20 mb-10 flex items-center justify-center mx-auto pt-10 pb-20 px-7 md:px-0"
+      >
+        <div class="w-full lg:w-[78%]">
+          <span class="font-bold text-[#e95ea3]">WHY NEXORA</span>
+
+          <h2 class="flex gap-7 text-3xl text-[#db2777]">
+            <span class="font-bold"> Benefits of</span>
+            <span class="text-2xl font-bold uppercase relative">
+              <img
+                src="images/name3.png"
+                class="w-6 absolute z-10 -left-[17px] -top-1"
+              />
+              NEXORA
+            </span>
+          </h2>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 w-full justify-center items-center gap-16 mt-7"
+          >
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+                Clinically Studied
+              </h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, a adipisicing elit. Illo nulla similique
+                laudantium
+              </p>
+            </div>
+
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+                Vegeterian Friendly
+              </h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, comfenevhy amet adipisicing elit. Illo
+                nulla
+              </p>
+            </div>
+
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+                Made in UK
+              </h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
+                nulla similique
+              </p>
+            </div>
+
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+                Free Shipping
+              </h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, amet adipisicing elit. Illo nulla
+                similique
+              </p>
+            </div>
+
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">No Risk</h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
+                nulla similique
+              </p>
+            </div>
+
+            <div class="">
+              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                🐱‍🐉
+              </h1>
+              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+                GMO Free
+              </h3>
+              <p class="pt-3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
+                nulla similique
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- products -->
+
+      <section
+        class="w-full lg:w-[78%] my-20 flex items-center justify-center mx-auto px-7 md:px-0"
+      >
+        <div class="">
+          <div class="text-center">
+            <h1 class="font-bold text-[#db2777] text-xl">OUR PRODUCTS</h1>
+            <p class="">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-12 mt-8"
+          >
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <figure
+                class="bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50"
+              >
+                <img src="images/product.png" class="" />
+              </figure>
+              <div class="flex flex-col space-y-2 mt-3">
+                <div class="flex justify-between">
+                  <h3 class="text-xl font-bold text-[#db2777]">Magnesium</h3>
+                  <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="flex justify-between">
+                  <div class="relative btn-container">
+                    <button class="btn px-4 text-xs uppercase rounded-full p-2">
+                      &#8594; Add to cart
+                    </button>
+                    <div
+                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                    ></div>
+                  </div>
+
+                  <span class="text-[17px]">$45.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ingredients -->
+
+      <section
+        class="w-full lg:w-[78%] flex justify-center items-center mx-auto py-20 px-7 md:px-0"
+      >
+        <div class="flex flex-col">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          >
+            <div class="md:col-span-2 w-[90%]">
+              <h2
+                class="textSize text-[#e95ea3] self-start font-bold text-left uppercase"
+              >
+                Ingredients
+              </h2>
+              <h1 class="font-bold text-4xl text-[#db2777]">
+                Better Ingredients
+              </h1>
+              <p class="pt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                cum rerum est corrupti dignissimos soluta eum ad. Ducimus, hic
+                vero?
+              </p>
+            </div>
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+          </div>
+          <br />
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          >
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+
+            <div class="bg-[#FBB4D8] bg-opacity-20 p-10 rounded-lg">
+              <h1 class="text-2xl font-bold">Vitamin C</h1>
+              <p class="">Vitamin C as ascorbic acid</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- reviews -->
+
+      <section
+        class="bg-[#FBB4D8] bg-opacity-20 mt-10 mb-64 flex items-center justify-center mx-auto pt-16 pb-96 relative px-7 md:px-0"
+      >
+        <div
+          class="w-full md:w-[78%] flex flex-col items-center justify-center mx-auto"
+        >
+          <div
+            class="text-center w-full md:w-[50%] flex flex-col justify-center items-center"
+          >
+            <h2 class="textSize text-[#e95ea3] font-bold uppercase">
+              TESTIMONIALS
+            </h2>
+            <h1 class="font-bold text-3xl md:text-4xl text-[#db2777]">
+              Over 1,000 satisfied customers with a 5-star reviews
+            </h1>
+          </div>
+
+          <div class="mt-20 flex flex-col md:flex-row gap-20 md:gap-6">
+            <div class="bg-white flex items-center w-fit h-[170px]">
+              <div class="h-[200px] bg-white">
+                <img
+                  src="images/person.png"
+                  alt=""
+                  class="w-[200px] h-full shadow-2xl"
+                />
+              </div>
+
+              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-[170px]">
+                <h2 class="font-bold text-lg">Nyla Shaw</h2>
+                <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                <p class="pt-4 text-[13px] md:text-[15px]">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                  alias nesciunt iusto nihil
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white flex items-center w-fit h-[170px]">
+              <div class="h-[200px] bg-white">
+                <img
+                  src="images/person.png"
+                  alt=""
+                  class="w-[200px] h-full shadow-2xl"
+                />
+              </div>
+
+              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-[170px]">
+                <h2 class="font-bold text-lg">Nyla Shaw</h2>
+                <span class="text-xs">⭐⭐⭐⭐⭐</span>
+                <p class="pt-4 text-[13px] md:text-[15px]">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                  alias nesciunt iusto nihil
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- newsletter -->
+
+        <section
+          class="w-full md:w-[78%] bg-[#FBB4D8] p-10 flex flex-col justify-center items-center mx-auto mb-4 md:mb-20 absolute -bottom-60 md:-bottom-80"
+        >
+          <div
+            class="flex flex-col md:flex-row gap-40 relative h-fit md:h-[350px] w-full"
+          >
+            <div
+              class="flex flex-col justify-center items-center w-full md:w-[55%] md:px-10 md:pr-16"
+            >
+              <h2
+                class="textSize text-[#e95ea3] self-start font-bold uppercase pb-4"
+              >
+                newsletter
+              </h2>
+              <h1
+                class="font-bold text-3xl md:text-4xl self-start text-[#db2777]"
+              >
+                Take Charge of Your <br />
+                Health Today
+              </h1>
+
+              <p class="pt-5">
+                <!-- We'll send you updates to keep you well-informed of how to be
+                the best you.
+                <br />
+                Just in case you decide to leave it till tomorrow.. -->
+                We'll send you updates to keep you well-informed of how to be
+                the best you. Just in case you decide to leave it till
+                tomorrow..
+              </p>
+              <div class="flex flex-col md:flex-row gap-3 mt-6 self-start">
+                <input
+                  type="email"
+                  class="w-[260px] p-2 px-6 rounded-full pl-6 outline-none"
+                  placeholder="Your email"
+                />
+                <button
+                  class="p-3 px-10 bg-[#db2777] uppercase rounded-full text-white font-bold opacity-90 hover:opacity-100 text-[15px]"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            <div
+              class="w-[45%] bg-[#db2777] p-3 md:p-10 mx-auto rounded-tl-[40%] rounded-br-[40%] absolute z-10 -top-24 md:-top-20 right-0 flex justify-center items-center"
+            >
+              <img
+                src="images/img (10).png"
+                alt=""
+                class="w-[330px] self-center"
+              />
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- footer -->
+
+      <footer class="mt-6">
+        <div class="pt-10">
+          <div
+            class="mb-10 flex flex-col md:flex-row md:justify-between gap-7 md:gap-4 w-[78%] mx-auto"
+          >
+            <span class="">
+              <h1
+                class="text-[23px] font-bold uppercase text-[#e95ea3] relative"
+              >
+                <img
+                  src="images/name3.png"
+                  class="w-6 absolute z-10 -left-[17px] -top-1"
+                />
+                NEXORA
+              </h1>
+              <ul class="pt-3 flex flex-col gap-5">
+                <li class="hover:underline cursor-pointer pt-2">
+                  info@nexora.com
+                </li>
+                <li class="hover:underline cursor-pointer">press@nexora.com</li>
+                <div class="flex gap-3">
+                  <li
+                    class="hover:underline cursor-pointer bg-[#db2777] p-1 px-2 rounded-full opacity-60 hover:opacity-100"
+                  >
+                    <i class="fa-brands fa-instagram text-lg text-white"></i>
+                  </li>
+                  <li
+                    class="hover:underline cursor-pointer bg-[#db2777] p-1 px-2 rounded-full opacity-60 hover:opacity-100"
+                  >
+                    <i class="fa-brands fa-facebook text-lg text-white"></i>
+                  </li>
+                  <li
+                    class="hover:underline cursor-pointer bg-[#db2777] p-1 px-2 rounded-full opacity-60 hover:opacity-100"
+                  >
+                    <i class="fa-brands fa-twitter text-lg text-white"></i>
+                  </li>
+                </div>
+              </ul>
+            </span>
+
+            <span class="">
+              <h1
+                class="text-[#db2777] uppercase text-sm font-bold tracking-wide py-1 md:py-2"
+              >
+                Take a tour
+              </h1>
+              <ul class="pt-3 flex flex-col gap-5">
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Shop
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  About Us
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Reviews
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">FAQ</li>
+              </ul>
+            </span>
+
+            <span class="">
+              <h1
+                class="text-[#db2777] uppercase text-sm font-bold tracking-wide py-1 md:py-2"
+              >
+                Our Company
+              </h1>
+              <ul class="pt-3 flex flex-col gap-5">
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Contact Us
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Terms & Conditions
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Returns & Delivery
+                </li>
+                <li class="opacity-70 hover:opacity-100 cursor-pointer">
+                  Privacy Policy
+                </li>
+              </ul>
+            </span>
+
+            <span class="">
+              <h1
+                class="text-[#db2777] uppercase text-sm font-bold tracking-wide py-1 md:py-2"
+              >
+                Recent Post
+              </h1>
+              <ul class="pt-3 flex flex-col gap-3">
+                <li class="cursor-pointer flex gap-2">
+                  <img src="images/cupcake6.jpg" class="w-12" />
+                  <h3 class="flex flex-col">
+                    <span class="font-bold text-xs text-[#db2777]"
+                      >JUNE 04, 2024</span
+                    >
+                    <span class="text-sm"
+                      >Nutritional tips for weight gain</span
+                    >
+                  </h3>
+                </li>
+
+                <li class="cursor-pointer flex gap-2">
+                  <img src="images/cupcake6.jpg" class="w-12" />
+                  <h3 class="flex flex-col">
+                    <span class="font-bold text-xs text-[#db2777]"
+                      >JUNE 11, 2024</span
+                    >
+                    <span class="text-sm"
+                      >How Sarah gained 10 pounds in 3 months</span
+                    >
+                  </h3>
+                </li>
+
+                <li class="cursor-pointer flex gap-2">
+                  <img src="images/cupcake6.jpg" class="w-12" />
+                  <h3 class="flex flex-col">
+                    <span class="font-bold text-xs text-[#db2777]"
+                      >JUNE 15, 2024</span
+                    >
+                    <span class="text-sm"
+                      >How to gain weight during winter season</span
+                    >
+                  </h3>
+                </li>
+              </ul>
+            </span>
+          </div>
+
+          <div class="text-xs md:text-sm py-3 text-center">
+            &#169; 2024 Copywright. All rights reserved
+          </div>
+        </div>
+      </footer>
+      <!--  -->
+    </div>
+  </body>
+</html>
