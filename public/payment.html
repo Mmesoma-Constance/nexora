@@ -164,9 +164,9 @@
     <div class="overflow-hidden">
       <!-- <img src="images/eye-close.png" alt="" id="eyeicon" /> -->
       <div
-        class="payment-container grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mx-auto"
+        class="payment-container grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center w-full"
       >
-        <div class="card w-[345px] md:w-[400px] mx-auto">
+        <div class="card w-full md:w-[400px] mx-auto">
           <div class="card-chip"></div>
           <div class="bank-name" id="bank-name-display">Bank Name</div>
           <div class="card-number" id="card-number-display">
@@ -182,6 +182,11 @@
 
         <div class="form-container">
           <div class="form-group">
+            <label for="bank-name">Bank Name</label>
+            <input type="text" id="bank-name" placeholder="Enter bank name" />
+          </div>
+
+          <div class="form-group">
             <label for="card-type-select">Card Type</label>
             <select id="card-type-select">
               <option value="VISA">VISA</option>
@@ -195,7 +200,7 @@
             <input
               type="text"
               id="card-number"
-              maxlength="19"
+              maxlength="16"
               placeholder="0000 0000 0000 0000"
             />
           </div>
@@ -207,11 +212,6 @@
               id="card-holder"
               placeholder="Enter card holder name"
             />
-          </div>
-
-          <div class="form-group">
-            <label for="bank-name">Bank Name</label>
-            <input type="text" id="bank-name" placeholder="Enter bank name" />
           </div>
 
           <div class="form-group inline-group">
