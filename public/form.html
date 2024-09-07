@@ -1,0 +1,146 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="toast.css" />
+  </head>
+  <body>
+    <div class="overflow-hidden">
+      <nav class="flex mt-4 mx-auto items-center w-[78%] justify-center">
+        <div class="flex justify-between w-full">
+          <a href="index.html">
+            <h1 class="text-[23px] font-bold uppercase text-[#e95ea3] relative">
+              <img
+                src="images/name3.png"
+                class="w-6 absolute z-10 -left-[17px] -top-1"
+              />
+              NEXORA
+            </h1>
+          </a>
+
+          <div class="flex gap-6 items-center">
+            <img
+              src="images/card-image1.jpg"
+              class="w-8 cursor-pointer btn--show-modal"
+            />
+
+            <!-- <button
+                      class="p-3 px-10 bg-[#e95ea3] uppercase rounded-full text-white font-bold opacity-90 hover:opacity-100"
+                    >
+                      Buy now
+                    </button> -->
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="w-[78%] flex flex-col justify-center items-center mx-auto mt-16"
+      >
+        <form action="" class="flex flex-col gap-6 border p-7 rounded-lg">
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-semibold text-[#db2777]">
+              Your fullname
+            </label>
+            <input
+              type="text"
+              class="w-[300px] p-2 pl-3 border focus:border-1 focus:border-[#e95ea3] focus:shadow-lg outline-none rounded"
+              placeholder="First and last name"
+              id="name"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-semibold text-[#db2777]">
+              Email
+            </label>
+            <input
+              type="email"
+              class="w-[300px] p-2 pl-3 border focus:border-1 focus:border-[#e95ea3] focus:shadow-lg outline-none rounded"
+              placeholder="Email address"
+              id="email"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-semibold text-[#db2777]">
+              Password
+            </label>
+            <div class="input-box form-group w-full">
+              <input
+                type="password"
+                class="password w-[300px] p-2 pl-3 border focus:border-1 focus:border-[#e95ea3] focus:shadow-lg outline-none rounded"
+                placeholder="At least 8 characters"
+                id="password"
+              />
+
+              <img src="images/eye-close.png" alt="" id="eyeicon" />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-semibold text-[#db2777]">
+              Re-enter password
+            </label>
+            <div class="input-box form-group w-full">
+              <input
+                type="password"
+                class="password w-[300px] p-2 pl-3 border focus:border-1 focus:border-[#e95ea3] focus:shadow-lg outline-none rounded"
+                placeholder=""
+                id="password-re-enter"
+              />
+
+              <img src="images/eye-close.png" alt="" id="eyeicon" />
+            </div>
+          </div>
+
+          <div class="">
+            <button
+              class="bg-[#e95ea3] hover:bg-[#db2777] p-2 w-[300px] font-semibold text-white rounded"
+              id="submit-btn"
+            >
+              Continue
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- 
+      <div class="popup" id="popup">
+        <div class="overlay"></div>
+        <div class="popup-container bg-white w-[350px]">
+          <p>Are you sure you want to sign out</p>
+          <button type="button" onclick="closePopup()">OK</button>
+        </div>
+      </div> -->
+
+      <div class="modal hidden">
+        <h2 class="modal__header">Are you sure you want to sign out ?</h2>
+        <div class="flex justify-between gap-6">
+          <button
+            class="btn--close-modal bg-gray-400 hover:bg-slate-500 p-2 w-[150px] font-semibold text-white rounded"
+          >
+            CANCEL
+          </button>
+          <button
+            class="bg-[#e95ea3] hover:bg-[#db2777] p-2 w-[150px] font-semibold text-white rounded"
+            id="clearStorage"
+          >
+            YES
+          </button>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
+
+      <!-- <button onclick="showToast(successMsg)" class="bg-green-800">
+        success
+      </button> -->
+      <!-- toast -->
+      <div id="toastBox"></div>
+      <!--  -->
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
