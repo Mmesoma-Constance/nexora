@@ -130,13 +130,14 @@ submitBtn.addEventListener("click", function (e) {
   const source = urlParams.get("source");
   if (!submitBtn.disabled) {
     localStorage.setItem("isLoggedIn", "true"); // Store login state in local storage
-    location.href = "index.html"; // Redirect to the index page
-  }
-  const isLoggedIn = localStorage.getItem("isLoggedIn"); // Retrieve login state from local storage
-  if (isLoggedIn && source === "/public/cart-page.html") {
-    placeOrderBtn.addEventListener("click", () => {
+
+    if (source === "cart") {
+      // If the user came from the cart page, redirect to the payment page
       location.href = "payment.html";
-    });
+    } else {
+      // Default redirection to home page if source is home or not specified
+      location.href = "index.html";
+    }
   }
 });
 

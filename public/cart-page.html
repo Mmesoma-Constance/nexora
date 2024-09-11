@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css" />
     <link rel="stylesheet" href="styles/pages/checkout/checkout.css" />
     <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="form.css" />
   </head>
   <body>
     <div class="checkout-header">
@@ -61,64 +62,11 @@
         <div class="order-summary js-order-summary"></div>
 
         <div
-          class="payment-summary md:fixed bg-white md:right-24 w-[315px] md:w-[400px]"
-        >
-          <div class="payment-summary-title text-[#db2777]">Order Summary</div>
-
-          <div class="payment-summary-row">
-            <div>Items (3):</div>
-            <div class="payment-summary-money">$42.75</div>
-          </div>
-
-          <div class="payment-summary-row">
-            <div>Shipping &amp; handling:</div>
-            <div class="payment-summary-money">$4.99</div>
-          </div>
-
-          <div class="payment-summary-row subtotal-row">
-            <div>Total before tax:</div>
-            <div class="payment-summary-money">$47.74</div>
-          </div>
-
-          <div class="payment-summary-row">
-            <div>Estimated tax (10%):</div>
-            <div class="payment-summary-money">$4.77</div>
-          </div>
-
-          <div class="payment-summary-row total-row">
-            <div>Order total:</div>
-            <div class="payment-summary-money">$52.51</div>
-          </div>
-
-          <button
-            class="bg-[#e95ea3] hover:bg-[#db2777] text-white place-order-button button-primary"
-            id="place-order-btn"
-          >
-            Place your order
-          </button>
-        </div>
+          class="payment-summary js-payment-summary md:fixed bg-white md:right-24 w-[315px] md:w-[400px]"
+        ></div>
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const isLoggedIn = localStorage.getItem("isLoggedIn"); // Retrieve login state from local storage
-
-        const placeOrderBtn = document.getElementById("place-order-btn");
-
-        if (!isLoggedIn) {
-          placeOrderBtn.addEventListener("click", () => {
-            location.href = "form.html";
-          });
-        }
-
-        if (isLoggedIn) {
-          placeOrderBtn.addEventListener("click", () => {
-            location.href = "payment.html";
-          });
-        }
-      });
-    </script>
     <script type="module" src="./scripts/checkout.js"></script>
   </body>
 </html>

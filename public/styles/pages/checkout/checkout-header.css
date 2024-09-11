@@ -1,16 +1,12 @@
 .checkout-header {
   height: 60px;
-
-  background-color: white;
-
   display: flex;
   justify-content: center;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 50;
 }
 
 .header-content {
@@ -21,15 +17,6 @@
 
 .checkout-header-left-section {
   width: 150px;
-}
-
-.amazon-logo {
-  width: 100px;
-  margin-top: 12px;
-}
-
-.amazon-mobile-logo {
-  display: none;
 }
 
 /* @media is used to create responsive design (making the

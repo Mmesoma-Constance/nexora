@@ -1,7 +1,7 @@
 import { products } from "../data/products-data.js";
 import { singleProductFn } from "../data/single-product.js";
 import { formatCurrency } from "./utils/money.js";
-import { addToCart } from "../data/cart.js";
+import { addToCart, calculateCartQuantity } from "../data/cart.js";
 
 let productsHTML = "";
 
@@ -14,15 +14,6 @@ const productId = getProductIdFromUrl(); // Get the productId from the URL
 
 // Find the matching product in the products array using the productId
 const matchingProduct = products.find((product) => product.id === productId);
-
-// singleProduct.forEach((productItem) => {
-//   const productId = productItem.productId;
-
-//   let matchingProduct;
-
-//   products.forEach((product) => {
-//     if (product.id === productId) matchingProduct = product;
-//   });
 
 if (matchingProduct) {
   // Generating the list of ingredients
@@ -75,16 +66,16 @@ if (matchingProduct) {
             )}</p>
 
             <h2
-              class="quantity hidden text-2xl font-bold gap-2 self-start mt-5 py-2 border px-10"
+              class="quantity-container text-2xl font-bold gap-2 self-start mt-5 py-2 border px-10"
             >
-              <span class="cursor-pointer decrement">-</span
-              ><span class="quantity-value">1</span
+              <span class="cursor-pointer decrement ">-</span
+              ><span class="quantity-value-${matchingProduct.id}"></span
               ><span class="cursor-pointer increment">+</span>
             </h2>
 
             <button
               onclick="showToast(successMsg)"
-              class="bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase"
+              class=" bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase"
               id="js-add-to-cart" data-product-id="${matchingProduct.id}"
             >
               Add to cart
@@ -95,22 +86,22 @@ if (matchingProduct) {
 
          <!--  -->
       <section class="my-20 mt-28 w-full">
-        <div class="w-[78%] mx-auto operations">
-          <ul class="flex gap-10 operations__tab-container">
+        <div class="w-[80%] mx-auto operations">
+          <ul class="flex md:gap-10 operations__tab-container">
             <li
-              class="uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
+              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
               data-tab="1"
             >
               Description
             </li>
             <li
-              class="uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
+              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
               data-tab="2"
             >
               Ingredients
             </li>
             <li
-              class="uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
+              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
               data-tab="3"
             >
               How to use
@@ -122,13 +113,13 @@ if (matchingProduct) {
           <div
             class="operations__content operations__content--1 operations__content--active"
           >
-            <ul class="w-[78%] mx-auto ">
+            <ul class="w-[78%] mx-auto">
               <li class="">
                 <h1 class="text-[#db2777] font-bold text-xl">
                 ${matchingProduct.name}
                 </h1>
 
-                <ul class="list-disc pt-4 px-4 flex flex-col space-y-2 pb-10">
+                <ul class="list-disc pt-4 px-4 flex flex-col space-y-2 py-10">
                   <li class="">
                     <span class="font-semibold">Description</span>: ${
                       matchingProduct.keywords.description
@@ -180,22 +171,21 @@ if (matchingProduct) {
 
       
 
-      <section class="w-[78%] mb-20 flex items-center justify-center mx-auto">
+      <section class="w-[78%] flex items-center justify-center mx-auto">
+     
         <div class="">
           <div class="text-center">
-            <h1 class="font-bold text-[#db2777] text-xl uppercase">
+            <h1 class="font-bold text-[#db2777] md:text-xl uppercase mx-10">
               PEOPLE THAT BOUGHT ${matchingProduct.name} ALSO BOUGHT
             </h1>
-            <!-- <p class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit
-            </p> -->
+           
           </div>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-12 mt-12"
-          >
-             <div class="">
+          
+         <div class=" horizontal_slider">
+                    <div class="slider_container flex flex-row items-center">
+             <div class="item">
             <figure
-                class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"  data-product-id="${
+                class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50 "  data-product-id="${
                   matchingProduct.similarProducts[0].id
                 }"
               >
@@ -230,7 +220,7 @@ if (matchingProduct) {
               </div>
             </div> 
 
-             <div class="">
+             <div class="item">
            <figure
                 class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"  data-product-id="${
                   matchingProduct.similarProducts[1].id
@@ -266,7 +256,7 @@ if (matchingProduct) {
               </div>
             </div> 
 
-             <div class="">
+             <div class="item">
             <figure
                 class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"  data-product-id="${
                   matchingProduct.similarProducts[2].id
@@ -302,6 +292,7 @@ if (matchingProduct) {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </section>
@@ -318,41 +309,60 @@ if (matchingProduct) {
     });
   });
 
+  const increment = document.querySelector(".increment");
+  const decrement = document.querySelector(".decrement");
+
+  const quantitySelector = document.querySelector(
+    `.quantity-value-${matchingProduct.id}`
+  );
+
+  let quantity = 1;
+  quantitySelector.innerHTML = quantity;
+  // increment and decrement
+
+  increment.addEventListener("click", () => {
+    if (quantity >= 0 && quantity < 5) {
+      quantity++;
+      quantitySelector.innerHTML = Number(quantity);
+    }
+  });
+
+  decrement.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      quantitySelector.innerHTML = Number(quantity);
+    }
+  });
+
+  function updateCartQuantity() {
+    let cartQuanitity = calculateCartQuantity();
+
+    document.getElementById("js-cart-quantity").innerHTML = cartQuanitity;
+
+    cartQuanitity = quantity;
+    quantitySelector.innerHTML = quantity;
+  }
+  updateCartQuantity();
+
   // add to cart
   document.querySelectorAll("#js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
       const productId = button.dataset.productId;
-      addToCart(productId);
+      if (quantity < 20) {
+        addToCart(productId, quantity);
+        console.log(quantity);
+      } else {
+        alert("Too much items!");
+      }
 
-      updateCartQuantity();
+      updateCartQuantity(matchingProduct, quantity);
+      // document.querySelector(".quantity-container").style.display = "flex";
     });
   });
 
   // document.getElementById("addedCart").addEventListener("click", () => {
   //   document.querySelector(".quantity").style.display = "flex";
   // });
-
-  const increment = document.querySelector(".increment");
-  const decrement = document.querySelector(".decrement");
-  let quantityValue = document.querySelector(".quantity-value");
-
-  let quantityIndex = 1;
-  quantityValue.innerHTML = quantityIndex;
-
-  increment.addEventListener("click", () => {
-    if (quantityIndex >= 1) {
-      quantityIndex++;
-      quantityValue.innerHTML = quantityIndex;
-    }
-    console.log(quantityValue);
-  });
-
-  decrement.addEventListener("click", () => {
-    if (quantityIndex > 1) {
-      quantityIndex--;
-      quantityValue.innerHTML = quantityIndex;
-    }
-  });
 
   // tab components
 

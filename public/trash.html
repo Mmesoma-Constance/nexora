@@ -3,3 +3,154 @@
   <div class="bg-red-500"></div>
   <div class="absolute"></div>
 </div>
+
+<section class="w-[78%] mb-20 flex items-center justify-center mx-auto">
+  <div class="">
+    <div class="text-center">
+      <h1 class="font-bold text-[#db2777] text-xl uppercase">
+        PEOPLE THAT BOUGHT ${matchingProduct.name} ALSO BOUGHT
+      </h1>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-12 mt-10"
+    >
+      <div class="">
+        <figure
+          class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+          data-product-id="${
+            matchingProduct.similarProducts[0].id
+          }"
+        >
+          <img
+            src="${
+            matchingProduct.similarProducts[0].image
+          }"
+            class=""
+          />
+        </figure>
+        <div class="flex flex-col space-y-2 mt-3">
+          <div class="flex justify-between">
+            <h3 class="text-xl font-bold text-[#db2777]">
+              ${ matchingProduct.similarProducts[0].name }
+            </h3>
+          </div>
+
+          <div class="flex justify-between">
+            <div class="relative btn-container">
+              <button
+                onclick="showToast(successMsg)"
+                class="btn px-4 text-xs uppercase rounded-full p-2"
+                id="js-add-to-cart"
+                data-product-id="${
+                matchingProduct.similarProducts[0].id
+              }"
+              >
+                &#8594; Add to cart
+              </button>
+              <div
+                class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+              ></div>
+            </div>
+
+            <span class="text-[17px]"
+              >$${formatCurrency( matchingProduct.similarProducts[0].priceCents
+              )}</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <figure
+          class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+          data-product-id="${
+            matchingProduct.similarProducts[1].id
+          }"
+        >
+          <img
+            src="${
+            matchingProduct.similarProducts[1].image
+          }"
+            class=""
+          />
+        </figure>
+        <div class="flex flex-col space-y-2 mt-3">
+          <div class="flex justify-between">
+            <h3 class="text-xl font-bold text-[#db2777]">
+              ${ matchingProduct.similarProducts[1].name }
+            </h3>
+          </div>
+          <div class="flex justify-between">
+            <div class="relative btn-container">
+              <button
+                onclick="showToast(successMsg)"
+                class="btn px-4 text-xs uppercase rounded-full p-2"
+                id="js-add-to-cart"
+                data-product-id="${
+                matchingProduct.similarProducts[1].id
+              }"
+              >
+                &#8594; Add to cart
+              </button>
+              <div
+                class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+              ></div>
+            </div>
+
+            <span class="text-[17px]"
+              >$${formatCurrency( matchingProduct.similarProducts[1].priceCents
+              )}</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <figure
+          class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+          data-product-id="${
+            matchingProduct.similarProducts[2].id
+          }"
+        >
+          <img
+            src="${
+            matchingProduct.similarProducts[2].image
+          }"
+            class=""
+          />
+        </figure>
+        <div class="flex flex-col space-y-2 mt-3">
+          <div class="flex justify-between">
+            <h3 class="text-xl font-bold text-[#db2777]">
+              ${ matchingProduct.similarProducts[2].name }
+            </h3>
+          </div>
+
+          <div class="flex justify-between">
+            <div class="relative btn-container">
+              <button
+                onclick="showToast(successMsg)"
+                class="btn px-4 text-xs uppercase rounded-full p-2"
+                id="js-add-to-cart"
+                data-product-id="${
+                matchingProduct.similarProducts[2].id
+              }"
+              >
+                &#8594; Add to cart
+              </button>
+              <div
+                class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+              ></div>
+            </div>
+
+            <span class="text-[17px]"
+              >$${formatCurrency( matchingProduct.similarProducts[2].priceCents
+              )}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -23,7 +23,7 @@
 
           <div class="flex gap-6 items-center">
             <img
-              src="images/card-image1.jpg"
+              src="images/icons (6).png"
               class="w-8 cursor-pointer btn--show-modal"
             />
 
@@ -42,7 +42,7 @@
         <form action="" class="flex flex-col gap-6 border p-7 rounded-lg">
           <div class="flex flex-col gap-2">
             <label for="name" class="font-semibold text-[#db2777]">
-              Your fullname
+              Your name
             </label>
             <input
               type="text"
@@ -116,7 +116,12 @@
       </div> -->
 
       <div class="modal hidden">
-        <h2 class="modal__header">Are you sure you want to sign out ?</h2>
+        <div class="modal__header">
+          <h4 class="text-3xl">Are you sure you want to sign out ?</h4>
+          <p class="text-center pt-2">
+            Your current session data will be erased if you sign out
+          </p>
+        </div>
         <div class="flex justify-between gap-6">
           <button
             class="btn--close-modal bg-gray-400 hover:bg-slate-500 p-2 w-[150px] font-semibold text-white rounded"

@@ -23,6 +23,12 @@
   animation: moveleft 0.5s linear forwards;
 }
 
+@media (max-width: 768px) {
+  .toast {
+    width: 300px;
+  }
+}
+
 @keyframes moveleft {
   100% {
     transform: translateX(0);

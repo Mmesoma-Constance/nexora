@@ -18,48 +18,68 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css" />
+    <link rel="stylesheet" href="./styles/pages/index.css" />
   </head>
   <body>
     <div class="overflow-hidden">
       <!-- header -->
 
-      <div class="relative flex h-[600px] w-full">
+      <div class="relative flex h-[800px] sm:h-[600px] w-full">
         <div class="bg-[#FBB4D8] bg-opacity-20 h-full w-[50%] pinkbg"></div>
         <div class="bg-white h-full w-[50%]"></div>
-        <div class="absolute z-10">
-          <nav class="flex mt-4 mx-auto items-center w-[78%] justify-center">
-            <div class="flex justify-between w-full">
-              <a href="index.html">
-                <h1
-                  class="text-[23px] font-bold uppercase text-[#e95ea3] relative"
-                >
-                  <img
-                    src="images/name3.png"
-                    class="w-6 absolute z-10 -left-[17px] -top-1"
-                  />
-                  NEXORA
-                </h1>
-              </a>
-
-              <div class="flex gap-6 items-center">
-                <a href="cart-page.html">
-                  <img src="images/cart-icon.png" class="w-8 cursor-pointer"
-                /></a>
-
-                <!-- <button
-                    class="p-3 px-10 bg-[#e95ea3] uppercase rounded-full text-white font-bold opacity-90 hover:opacity-100"
+        <div class="absolute z-10 w-full">
+          <div class="checkout-header">
+            <div class="header-content bg-white shadow-lg">
+              <nav
+                class="flex mt-4 mx-auto items-center w-[78%] justify-center"
+              >
+                <div class="flex justify-between w-full">
+                  <a href="index.html">
+                    <h1
+                      class="text-[23px] font-bold uppercase text-[#e95ea3] relative self-center"
+                    >
+                      <img
+                        src="images/name3.png"
+                        class="w-6 absolute z-10 -left-[17px] -top-1"
+                      />
+                      NEXORA
+                    </h1></a
                   >
-                    Buy now
-                  </button> -->
-              </div>
+
+                  <div class="flex gap-6 items-center">
+                    <img
+                      src="images/profile.png"
+                      class="w-8 cursor-pointer hidden"
+                      id="profile-picture"
+                    />
+                    <a
+                      href="cart-page.html"
+                      class="relative flex justify-center items-center"
+                    >
+                      <span
+                        class="absolute z-10 self-center -top-3 right-0 bg-[#db2777] rounded-full p-0.5 px-2 text-[12px] text-white"
+                        id="js-cart-quantity"
+                      >
+                      </span>
+                      <img
+                        src="images/cart-icon.png"
+                        class="w-8 cursor-pointer"
+                    /></a>
+                  </div>
+                </div>
+              </nav>
             </div>
-          </nav>
+          </div>
         </div>
       </div>
 
-      <div
-        class="product-container flex flex-col justify-center items-center mx-auto"
-      ></div>
+     
+          <div
+            class="product-container flex flex-col justify-center items-center mx-auto"
+          ></div>
+        </div>
+      </div>
 
       <!-- footer -->
 
