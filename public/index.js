@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// document.getElementById("cart-btn").addEventListener("click", () => {
+
+//   location.href = "cart-page.html";
+// });
+
 let productHTML = "";
 
 products.forEach((product) => {

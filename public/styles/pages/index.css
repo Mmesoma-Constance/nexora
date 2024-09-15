@@ -19,16 +19,20 @@
   overflow-x: scroll;
   padding-bottom: 20px;
   box-sizing: border-box;
+  margin: auto auto;
 }
 
 .slider_container {
   display: block;
   white-space: nowrap;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  /* gap: 10px; */
 }
 
 .item {
   display: inline-block;
-  margin-right: 30px;
+  /* margin-right: 30px; */
+  /* gap: 10px; */
   white-space: wrap;
+  /* width: 400px; */
 }

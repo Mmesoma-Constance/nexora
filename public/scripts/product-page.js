@@ -27,15 +27,19 @@ if (matchingProduct) {
     .join(""); // Converts the array to a single string of list items
 
   productsHTML += `
-  <div
-          class="absolute top-0 flex flex-col md:flex-row mt-20 w-[78%] mx-auto justify-center items-center gap-6"
+   <div
+        class="product-container flex flex-col justify-center items-center mx-auto"
+      >
+        <div
+          class="absolute top-0 flex flex-col md:flex-row mt-28 w-[85%] md:w-[78%] mx-auto justify-center items-center gap-6"
         >
           <!-- image -->
 
           <div class="w-full md:w-[50%] flex justify-center items-center">
-            <img src="${
-              matchingProduct.image
-            }" class="w-[230px] md:w-[420px]" />
+            <img
+              src="${matchingProduct.image}"
+              class="w-[230px] md:w-[420px]"
+            />
           </div>
 
           <div
@@ -50,33 +54,36 @@ if (matchingProduct) {
             <h1
               class="textSize text-3xl self-start font-bold text-left text-[#e95ea3] pb-7"
             >
-            ${matchingProduct.name}
+              ${matchingProduct.name}
             </h1>
-            <p class="self-start text=sm font-bold">
-             ${matchingProduct.tag}
+            <p class="self-start text=sm font-bold">${matchingProduct.tag}</p>
+
+            <p class="self-start pt-3">${matchingProduct.about}</p>
+
+            <p class="text-3xl font-bold self-start pt-5">
+              $${formatCurrency(matchingProduct.priceCents)}
             </p>
 
-
-            <p class="self-start pt-3">
-             ${matchingProduct.about}
-            </p>
-
-            <p class="text-3xl font-bold self-start pt-5">$${formatCurrency(
-              matchingProduct.priceCents
-            )}</p>
-
-            <h2
-              class="quantity-container text-2xl font-bold gap-2 self-start mt-5 py-2 border px-10"
+            <p
+              class="quantity-container text-2xl font-bold flex gap-4 self-start mt-6"
             >
-              <span class="cursor-pointer decrement ">-</span
-              ><span class="quantity-value-${matchingProduct.id}"></span
-              ><span class="cursor-pointer increment">+</span>
-            </h2>
+              <span
+                class="cursor-pointer decrement bg-[#e95ea3] px-4 h-fit text-center text-white"
+                >-</span
+              ><span class="quantity-value-${
+                matchingProduct.id
+              } px-4 h-fit text-center">2</span
+              ><span
+                class="cursor-pointer increment bg-[#e95ea3] px-4 h-fit text-center text-white"
+                >+</span
+              >
+            </p>
 
             <button
               onclick="showToast(successMsg)"
-              class=" bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase"
-              id="js-add-to-cart" data-product-id="${matchingProduct.id}"
+              class="bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase"
+              id="js-add-to-cart"
+              data-product-id="${matchingProduct.id}"
             >
               Add to cart
               <!-- &#8594; -->
@@ -84,218 +91,234 @@ if (matchingProduct) {
           </div>
         </div>
 
-         <!--  -->
-      <section class="my-20 mt-28 w-full">
-        <div class="w-[80%] mx-auto operations">
-          <ul class="flex md:gap-10 operations__tab-container">
-            <li
-              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
-              data-tab="1"
+        <!--  -->
+        <section class="my-20 mt-28 w-full">
+          <div class="w-[85%] sm:w-[78%] mx-auto operations">
+            <ul class="flex md:gap-10 operations__tab-container">
+              <li
+                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
+                data-tab="1"
+              >
+                Description
+              </li>
+              <li
+                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
+                data-tab="2"
+              >
+                Ingredients
+              </li>
+              <li
+                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
+                data-tab="3"
+              >
+                How to use
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-[#FBB4D8] bg-opacity-20 w-full py-10">
+            <div
+              class="operations__content operations__content--1 operations__content--active"
             >
-              Description
-            </li>
-            <li
-              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
-              data-tab="2"
-            >
-              Ingredients
-            </li>
-            <li
-              class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
-              data-tab="3"
-            >
-              How to use
-            </li>
-          </ul>
+              <ul class="w-[78%] mx-auto">
+                <li class="">
+                  <h1 class="text-[#db2777] font-bold text-xl">
+                    ${matchingProduct.name}
+                  </h1>
+
+                  <ul class="list-disc pt-4 px-4 flex flex-col space-y-2 py-10">
+                    <li class="">
+                      <span class="font-semibold">Description</span>: ${
+                        matchingProduct.keywords.description
+                      }
+                    </li>
+                    <li class="">
+                      <span class="font-semibold">Benefits</span>: ${
+                        matchingProduct.keywords.benefits
+                      }
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="operations__content operations__content--2">
+              <ul class="w-[78%] mx-auto">
+                <li class="">
+                  <h1 class="text-[#db2777] font-bold text-xl">
+                    ${matchingProduct.name} Ingredients
+                  </h1>
+                  <ol class="list-decimal pt-4 px-4">
+                    ${ingredientsList}
+                  </ol>
+                </li>
+              </ul>
+            </div>
+
+            <div class="operations__content operations__content--3">
+              <ul class="w-[78%] mx-auto">
+                <li class="">
+                  <h1 class="text-[#db2777] font-bold text-xl">
+                    How to use ${matchingProduct.name}
+                  </h1>
+                  <ul class="list-disc pt-4 px-4 flex flex-col space-y-2">
+                    ${usageList}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- featured -->
+
+        <div class="text-center">
+          <h1 class="font-bold text-[#db2777] md:text-xl uppercase px-10 pb-5">
+            PEOPLE THAT BOUGHT ${matchingProduct.name} ALSO BOUGHT
+          </h1>
         </div>
+        <section class="w-[85%] md:w-[78%] mx-auto">
+          <div class="">
+            <div class="horizontal_slider">
+              <div class="slider_container grid grid-cols-3 items-center">
+                <div class="item">
+                  <div class="w-[320px]">
+                    <figure
+                      class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+                      data-product-id="${matchingProduct.similarProducts[0].id}"
+                    >
+                      <img
+                        src="${matchingProduct.similarProducts[0].image}"
+                        class=""
+                      />
+                    </figure>
+                    <div class="flex flex-col space-y-2 mt-3">
+                      <div class="flex justify-between">
+                        <h3 class="text-xl font-bold text-[#db2777]">
+                          ${matchingProduct.similarProducts[0].name}
+                        </h3>
+                      </div>
 
-        <div class="bg-[#FBB4D8] bg-opacity-20 w-full py-10">
-          <div
-            class="operations__content operations__content--1 operations__content--active"
-          >
-            <ul class="w-[78%] mx-auto">
-              <li class="">
-                <h1 class="text-[#db2777] font-bold text-xl">
-                ${matchingProduct.name}
-                </h1>
+                      <div class="flex justify-between">
+                        <div class="relative btn-container">
+                          <button
+                            onclick="showToast(successMsg)"
+                            class="btn px-4 text-xs uppercase rounded-full p-2"
+                            id="js-add-to-cart"
+                            data-product-id="${
+                              matchingProduct.similarProducts[0].id
+                            }"
+                          >
+                            &#8594; Add to cart
+                          </button>
+                          <div
+                            class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                          ></div>
+                        </div>
 
-                <ul class="list-disc pt-4 px-4 flex flex-col space-y-2 py-10">
-                  <li class="">
-                    <span class="font-semibold">Description</span>: ${
-                      matchingProduct.keywords.description
-                    }
-                  </li>
-                  <li class="">
-                    <span class="font-semibold">Benefits</span>: ${
-                      matchingProduct.keywords.benefits
-                    }
-                  </li>
-                </ul>
-              </li>
-            
-            </ul>
-          </div>
-
-          <div class="operations__content operations__content--2">
-            <ul class="w-[78%] mx-auto">
-              <li class="">
-                <h1 class="text-[#db2777] font-bold text-xl">
-                  ${matchingProduct.name} Ingredients
-                </h1>
-                <ol class="list-decimal pt-4 px-4">
-               
-                ${ingredientsList}
-                </ol>
-              </li>
-            </ul>
-          </div>
-
-          <div class="operations__content operations__content--3">
-            <ul class="w-[78%] mx-auto">
-              <li class="">
-                <h1 class="text-[#db2777] font-bold text-xl">
-                  How to use ${matchingProduct.name}
-                </h1>
-                <ul class="list-disc pt-4 px-4 flex flex-col space-y-2">
-                ${usageList}
-                </ul>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      
-      <!-- featured -->
-
-      
-
-      <section class="w-[78%] flex items-center justify-center mx-auto">
-     
-        <div class="">
-          <div class="text-center">
-            <h1 class="font-bold text-[#db2777] md:text-xl uppercase mx-10">
-              PEOPLE THAT BOUGHT ${matchingProduct.name} ALSO BOUGHT
-            </h1>
-           
-          </div>
-          
-         <div class=" horizontal_slider">
-                    <div class="slider_container flex flex-row items-center">
-             <div class="item">
-            <figure
-                class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50 "  data-product-id="${
-                  matchingProduct.similarProducts[0].id
-                }"
-              >
-                <img src="${
-                  matchingProduct.similarProducts[0].image
-                }" class="" />
-              </figure> 
-              <div class="flex flex-col space-y-2 mt-3">
-                <div class="flex justify-between">
-                  <h3 class="text-xl font-bold text-[#db2777]">${
-                    matchingProduct.similarProducts[0].name
-                  }</h3>
-                 
-                </div>
-
-                <div class="flex justify-between">
-                  <div class="relative btn-container">
-                    <button onclick="showToast(successMsg)" class="btn px-4 text-xs uppercase rounded-full p-2" id="js-add-to-cart" data-product-id="${
-                      matchingProduct.similarProducts[0].id
-                    }">
-                      &#8594; Add to cart
-                    </button>
-                    <div
-                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
-                    ></div>
+                        <span class="text-[17px]"
+                          >$${formatCurrency(
+                            matchingProduct.similarProducts[0].priceCents
+                          )}</span
+                        >
+                      </div>
+                    </div>
                   </div>
-
-                  <span class="text-[17px]">$${formatCurrency(
-                    matchingProduct.similarProducts[0].priceCents
-                  )}</span>
                 </div>
-              </div>
-            </div> 
 
-             <div class="item">
-           <figure
-                class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"  data-product-id="${
-                  matchingProduct.similarProducts[1].id
-                }"
-              >
-                <img src="${
-                  matchingProduct.similarProducts[1].image
-                }" class="" />
-              </figure> 
-              <div class="flex flex-col space-y-2 mt-3">
-                <div class="flex justify-between">
-                  <h3 class="text-xl font-bold text-[#db2777]">${
-                    matchingProduct.similarProducts[1].name
-                  }</h3>
-                 
-                </div>
-                <div class="flex justify-between">
-                  <div class="relative btn-container">
-                    <button onclick="showToast(successMsg)" class="btn px-4 text-xs uppercase rounded-full p-2" id="js-add-to-cart" data-product-id="${
-                      matchingProduct.similarProducts[1].id
-                    }">
-                      &#8594; Add to cart
-                    </button>
-                    <div
-                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
-                    ></div>
+                <div class="item">
+                  <div class="w-[320px]">
+                    <figure
+                      class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+                      data-product-id="${matchingProduct.similarProducts[1].id}"
+                    >
+                      <img
+                        src="${matchingProduct.similarProducts[1].image}"
+                        class=""
+                      />
+                    </figure>
+                    <div class="flex flex-col space-y-2 mt-3">
+                      <div class="flex justify-between">
+                        <h3 class="text-xl font-bold text-[#db2777]">
+                          ${matchingProduct.similarProducts[1].name}
+                        </h3>
+                      </div>
+                      <div class="flex justify-between">
+                        <div class="relative btn-container">
+                          <button
+                            onclick="showToast(successMsg)"
+                            class="btn px-4 text-xs uppercase rounded-full p-2"
+                            id="js-add-to-cart"
+                            data-product-id="${
+                              matchingProduct.similarProducts[1].id
+                            }"
+                          >
+                            &#8594; Add to cart
+                          </button>
+                          <div
+                            class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                          ></div>
+                        </div>
+
+                        <span class="text-[17px]"
+                          >$${formatCurrency(
+                            matchingProduct.similarProducts[1].priceCents
+                          )}</span
+                        >
+                      </div>
+                    </div>
                   </div>
-
-                  <span class="text-[17px]">$${formatCurrency(
-                    matchingProduct.similarProducts[1].priceCents
-                  )}</span>
-                </div>
-              </div>
-            </div> 
-
-             <div class="item">
-            <figure
-                class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"  data-product-id="${
-                  matchingProduct.similarProducts[2].id
-                }"
-              >
-                <img src="${
-                  matchingProduct.similarProducts[2].image
-                }" class="" />
-              </figure> 
-              <div class="flex flex-col space-y-2 mt-3">
-                <div class="flex justify-between">
-                  <h3 class="text-xl font-bold text-[#db2777]">${
-                    matchingProduct.similarProducts[2].name
-                  }</h3>
-                 
                 </div>
 
-                <div class="flex justify-between">
-                  <div class="relative btn-container">
-                    <button onclick="showToast(successMsg)" class="btn px-4 text-xs uppercase rounded-full p-2" id="js-add-to-cart" data-product-id="${
-                      matchingProduct.similarProducts[2].id
-                    }">
-                      &#8594; Add to cart
-                    </button>
-                    <div
-                      class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
-                    ></div>
+                <div class="item">
+                  <div class="w-[320px]">
+                    <figure
+                      class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
+                      data-product-id="${matchingProduct.similarProducts[2].id}"
+                    >
+                      <img
+                        src="${matchingProduct.similarProducts[2].image}"
+                        class=""
+                      />
+                    </figure>
+                    <div class="flex flex-col space-y-2 mt-3">
+                      <div class="flex justify-between">
+                        <h3 class="text-xl font-bold text-[#db2777]">
+                          ${matchingProduct.similarProducts[2].name}
+                        </h3>
+                      </div>
+
+                      <div class="flex justify-between">
+                        <div class="relative btn-container">
+                          <button
+                            onclick="showToast(successMsg)"
+                            class="btn px-4 text-xs uppercase rounded-full p-2"
+                            id="js-add-to-cart"
+                            data-product-id="${
+                              matchingProduct.similarProducts[2].id
+                            }"
+                          >
+                            &#8594; Add to cart
+                          </button>
+                          <div
+                            class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+                          ></div>
+                        </div>
+
+                        <span class="text-[17px]"
+                          >$${formatCurrency(
+                            matchingProduct.similarProducts[2].priceCents
+                          )}</span
+                        >
+                      </div>
+                    </div>
                   </div>
-
-                  <span class="text-[17px]">$${formatCurrency(
-                    matchingProduct.similarProducts[2].priceCents
-                  )}</span>
                 </div>
               </div>
             </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
   `;
 

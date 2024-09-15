@@ -154,3 +154,393 @@
     </div>
   </div>
 </section>
+
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
+<div class="orders-grid">
+  <div class="order-container">
+    <div class="order-header">
+      <div class="order-header-left-section">
+        <div class="order-date">
+          <div class="order-header-label">Order Placed:</div>
+          <div>August 12</div>
+        </div>
+        <div class="order-total">
+          <div class="order-header-label">Total:</div>
+          <div>$35.06</div>
+        </div>
+      </div>
+
+      <div class="order-header-right-section">
+        <div class="order-header-label">Order ID:</div>
+        <div>27cba69d-4c3d-4098-b42d-ac7fa62b7664</div>
+      </div>
+    </div>
+
+    <div class="order-details-grid">
+      <div class="product-image-container">
+        <img src="images/product.png" />
+      </div>
+
+      <div class="product-details">
+        <div class="product-name">
+          Black and Gray Athletic Cotton Socks - 6 Pairs
+        </div>
+        <div class="product-delivery-date">Arriving on: August 15</div>
+        <div class="product-quantity">Quantity: 1</div>
+        <button class="buy-again-button button-primary">
+          <img class="buy-again-icon" src="images/buy-again.png" />
+          <span class="buy-again-message">Buy it again</span>
+        </button>
+      </div>
+
+      <div class="product-actions">
+        <a href="tracking.html">
+          <button class="track-package-button button-secondary">
+            Track package
+          </button>
+        </a>
+      </div>
+
+      <div class="product-image-container">
+        <img src="images/product.png" />
+      </div>
+
+      <div class="product-details">
+        <div class="product-name">
+          Adults Plain Cotton T-Shirt - 2 Pack
+        </div>
+        <div class="product-delivery-date">Arriving on: August 19</div>
+        <div class="product-quantity">Quantity: 2</div>
+        <button class="buy-again-button button-primary">
+          <img class="buy-again-icon" src="images/buy-again.png" />
+          <span class="buy-again-message">Buy it again</span>
+        </button>
+      </div>
+
+      <div class="product-actions">
+        <a href="tracking.html">
+          <button class="track-package-button button-secondary">
+            Track package
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-container">
+    <div class="order-header">
+      <div class="order-header-left-section">
+        <div class="order-date">
+          <div class="order-header-label">Order Placed:</div>
+          <div>June 10</div>
+        </div>
+        <div class="order-total">
+          <div class="order-header-label">Total:</div>
+          <div>$41.90</div>
+        </div>
+      </div>
+
+      <div class="order-header-right-section">
+        <div class="order-header-label">Order ID:</div>
+        <div>b6b6c212-d30e-4d4a-805d-90b52ce6b37d</div>
+      </div>
+    </div>
+
+    <div class="order-details-grid">
+      <div class="product-image-container">
+        <img src="images/product.png" />
+      </div>
+
+      <div class="product-details">
+        <div class="product-name">Intermediate Size Basketball</div>
+        <div class="product-delivery-date">Arriving on: June 17</div>
+        <div class="product-quantity">Quantity: 2</div>
+        <button class="buy-again-button button-primary">
+          <img class="buy-again-icon" src="images/buy-again.png" />
+          <span class="buy-again-message">Buy it again</span>
+        </button>
+      </div>
+
+      <div class="product-actions">
+        <a href="tracking.html">
+          <button class="track-package-button button-secondary">
+            Track package
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+// top-selling product
+let topSellersHTML = "";
+// topSellingProducts.forEach((product) => {
+//   const topSellingProduct = getProduct(product.productId);
+//   const  =
+
+// products.forEach((product) => {
+//   const productId = product.productId;
+//   let topSellingProduct = topSellingProducts(productId);
+
+//   topSellersHTML += `
+//   <div class="product-container">
+
+//               <figure
+//                 class="js-single-product-btn bg-[#FBB4D8] h-[320px] p-6 flex flex-col justify-center items-center bg-opacity-50 cursor-pointer" data-product-id="${
+//                   topSellingProduct.id
+//                 }"
+//               >
+//                 <img src="${topSellingProduct.image}" class="" /></figure
+//             >
+//             <div class="flex flex-col space-y-2 mt-3">
+//               <div class="flex justify-between">
+//                 <h3 class="text-xl font-bold text-[#db2777]">${
+//                   topSellingProduct.name
+//                 }</h3>
+
+//               </div>
+
+//               <div class="flex justify-between">
+//                 <div class="relative btn-container">
+//                   <button
+//                     onclick="showToast(successMsg)"
+//                     class="btn px-4 text-xs uppercase rounded-full p-2"
+//                     id="js-add-to-cart" data-product-id="${
+//                       topSellingProduct.id
+//                     }"
+//                   >
+//                     &#8594; Add to cart
+//                   </button>
+//                   <div
+//                     class="btn-bg absolute bg-[#FBB4D8] -z-10 w-10 rounded-full left-0 h-8 top-0"
+//                   ></div>
+//                 </div>
+
+//                 <span class="text-[17px]">$${formatCurrency(
+//                   topSellingProduct.priceCents
+//                 )}</span>
+//               </div>
+//             </div>
+//           </div>
+// `;
+
+// });
+//  document.querySelector(".recommended-product-container").innerHTML =
+//     topSellersHTML;
+
+
+
+
+////////////////////////
+
+1. Protein Capsules
+Whey Protein Isolate Capsules
+
+Ingredients:
+Whey Protein Isolate
+Leucine
+Isoleucine
+Valine
+Digestive Enzyme Blend (Papain, Bromelain)
+Casein Protein Capsules
+
+Ingredients:
+Micellar Casein
+Calcium Caseinate
+L-Glutamine
+Magnesium
+Vitamin D
+2. Appetite Stimulants
+Fenugreek Extract Capsules
+
+Ingredients:
+Fenugreek Seed Extract
+Fennel Extract
+Vitamin B6
+Zinc
+Ginger Root Capsules
+
+Ingredients:
+Ginger Root Powder
+Black Pepper Extract (BioPerine)
+Digestive Enzyme Blend (Amylase, Lipase)
+3. Digestive Enzymes
+Bromelain Capsules
+
+Ingredients:
+Bromelain
+Papain
+Amylase
+Ginger Root Extract
+Peppermint Leaf Extract
+Papain Capsules
+
+Ingredients:
+Papain
+Fennel Seed Powder
+Peppermint Extract
+Papaya Fruit Powder
+Licorice Root Extract
+4. Multivitamins
+Comprehensive Multivitamin Capsules
+
+Ingredients:
+Vitamin A (Beta-Carotene)
+Vitamin C (Ascorbic Acid)
+Vitamin D3
+Vitamin E (Tocopherol)
+B-Complex (B1, B2, B6, B12)
+Calcium, Magnesium, Zinc, Selenium
+Folic Acid
+Gainers’ Multivitamins
+
+Ingredients:
+Vitamin A (Retinol)
+Vitamin C (Ascorbic Acid)
+Vitamin E
+Vitamin B1 (Thiamine), B2 (Riboflavin), B6 (Pyridoxine), B12 (Cobalamin)
+Iron, Calcium, Zinc, Magnesium
+Biotin
+Chromium
+
+
+
+1. Mineral Supplements
+Zinc and Magnesium Capsules
+
+Ingredients:
+Zinc Gluconate
+Magnesium Citrate
+Vitamin B6 (Pyridoxine)
+Copper Gluconate (to balance zinc absorption)
+Calcium and Magnesium Capsules
+
+Ingredients:
+Calcium Carbonate
+Magnesium Oxide
+Vitamin D3 (Cholecalciferol)
+Boron (to enhance calcium absorption)
+Iron Complex Capsules
+
+Ingredients:
+Ferrous Fumarate (Iron)
+Vitamin C (Ascorbic Acid) (enhances iron absorption)
+Folic Acid (Vitamin B9)
+Vitamin B12 (Cobalamin)
+2. Essential Fatty Acid Capsules
+Omega-3 Fish Oil Capsules
+
+Ingredients:
+Fish Oil Concentrate (EPA, DHA)
+Vitamin E (as an antioxidant to protect the oil)
+Rosemary Extract (natural preservative)
+Flaxseed Oil Capsules (Vegan Option)
+
+Ingredients:
+Flaxseed Oil (ALA - Alpha-Linolenic Acid)
+Sunflower Lecithin (emulsifier)
+Rosemary Extract
+Omega-3-6-9 Capsules
+
+Ingredients:
+Fish Oil (EPA, DHA)
+Borage Seed Oil (GLA - Gamma-Linolenic Acid)
+Flaxseed Oil (ALA - Alpha-Linolenic Acid)
+Vitamin E (as an antioxidant)
+3. Herbal Supplements
+Ashwagandha Capsules
+
+Ingredients:
+Ashwagandha Root Extract (Withania Somnifera)
+Black Pepper Extract (BioPerine) (enhances absorption)
+Organic Turmeric Extract (anti-inflammatory)
+Ginseng Capsules
+
+Ingredients:
+Panax Ginseng Root Extract
+Eleuthero (Siberian Ginseng) Extract
+Royal Jelly Powder (supports energy)
+Milk Thistle Capsules
+
+Ingredients:
+Milk Thistle Seed Extract (Silymarin)
+Dandelion Root Extract (supports liver health)
+Artichoke Leaf Extract (supports digestion)
+4. Probiotics
+Probiotic Blend Capsules
+
+Ingredients:
+Lactobacillus Acidophilus
+Bifidobacterium Lactis
+Lactobacillus Plantarum
+Streptococcus Thermophilus
+Prebiotic Fiber (Inulin)
+Advanced Probiotic Formula
+
+Ingredients:
+Lactobacillus Rhamnosus
+Bifidobacterium Longum
+Saccharomyces Boulardii (yeast probiotic)
+FOS (Fructooligosaccharides) (prebiotic fiber)
+Digestive Health Probiotics
+
+Ingredients:
+Lactobacillus Casei
+Bifidobacterium Breve
+Lactobacillus Reuteri
+L-Glutamine (for gut health)
+Inulin (prebiotic fiber)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
