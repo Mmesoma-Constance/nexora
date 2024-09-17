@@ -189,7 +189,7 @@ if (matchingProduct) {
                     >
                       <img
                         src="${matchingProduct.similarProducts[0].image}"
-                        class=""
+                        class="w-[250px]"
                       />
                     </figure>
                     <div class="flex flex-col space-y-2 mt-3">
@@ -234,7 +234,7 @@ if (matchingProduct) {
                     >
                       <img
                         src="${matchingProduct.similarProducts[1].image}"
-                        class=""
+                        class="w-[250px]"
                       />
                     </figure>
                     <div class="flex flex-col space-y-2 mt-3">
@@ -278,7 +278,7 @@ if (matchingProduct) {
                     >
                       <img
                         src="${matchingProduct.similarProducts[2].image}"
-                        class=""
+                        class="w-[250px]"
                       />
                     </figure>
                     <div class="flex flex-col space-y-2 mt-3">

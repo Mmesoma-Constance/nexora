@@ -9,16 +9,21 @@ import { getProduct } from "./data/products-data.js";
 document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem("isLoggedIn"); // Retrieve login state from local storage
 
-  const signInButton = document.querySelector("#signin-btn"); // Update the selector to match your HTML
+  const signInButton = document.querySelectorAll("#signin-btn"); // Update the selector to match your HTML
 
   if (!isLoggedIn) {
-    signInButton.addEventListener("click", () => {
-      location.href = "form.html?source=home";
+    signInButton.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        location.href = "form.html?source=home";
+      });
     });
   }
 
   if (isLoggedIn) {
-    signInButton.style.display = "none"; // Change button text
+    signInButton.forEach((btn) => {
+      btn.style.display = "none"; // Change button text
+    });
+
     const profilePic = document.getElementById("profile-picture");
     profilePic.style.display = "flex";
     profilePic.addEventListener("click", () => {
@@ -27,10 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// document.getElementById("cart-btn").addEventListener("click", () => {
-
-//   location.href = "cart-page.html";
-// });
+document.getElementById("cart-btn").addEventListener("click", () => {
+  try {
+    location.href = "cart-page.html";
+  } catch (error) {
+    alert("NO INTERNET CONNECTION", error);
+  }
+});
 
 let productHTML = "";
 
@@ -43,7 +51,7 @@ products.forEach((product) => {
                     product.id
                   }"
                 >
-                  <img src="${product.image}" class="" /></figure
+                  <img src="${product.image}" class="w-[250px]" /></figure
               >
               <div class="flex flex-col space-y-2 mt-3">
                 <div class="flex justify-between">
@@ -220,22 +228,22 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
 /////////////////////////////////////////////////
 
 // reveal on scroll
-const allSection = document.querySelectorAll(".section");
+// const allSection = document.querySelectorAll(".section");
 
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-  // console.log(entry);
-  if (!entry.isIntersecting) return;
-  entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
-};
+// const revealSection = function (entries, observer) {
+//   const [entry] = entries;
+//   // console.log(entry);
+//   if (!entry.isIntersecting) return;
+//   entry.target.classList.remove("section--hidden");
+//   observer.unobserve(entry.target);
+// };
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null,
+//   threshold: 0.15,
+// });
 
-allSection.forEach(function (section) {
-  sectionObserver.observe(section);
-  section.classList.add("section--hidden");
-});
+// allSection.forEach(function (section) {
+//   sectionObserver.observe(section);
+//   section.classList.add("section--hidden");
+// });

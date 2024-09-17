@@ -169,10 +169,21 @@ function loadPage() {
   }
 
   // Determine if the product has been delivered or is still arriving
-  const deliveredMessage =
-    today.isAfter(deliveryTime) || today.isSame(deliveryTime)
-      ? "Delivered on"
-      : "Arriving on";
+  // const deliveredMessage =
+  //   today.isAfter(deliveryTime) || today.isSame(deliveryTime)
+  //     ? "Delivered on"
+  //     : "Arriving on";
+
+  let deliveredMessage;
+  if (today.isAfter(deliveryTime)) {
+    deliveredMessage = `Delivered on`;
+  } else if (today.isSame(deliveryTime)) {
+    deliveredMessage = "Out for delivery today!";
+  } else if (today.isSame(deliveryTime.subtract(1, "day"))) {
+    deliveredMessage = "Arriving tomorrow!";
+  } else {
+    deliveredMessage = `Arriving on `;
+  }
 
   // Log data to help you debug
   console.log("Order Time:", orderTime.format("YYYY-MM-DD"));

@@ -68,7 +68,7 @@
   <body class="">
     <div class="overflow-hidden">
       <!-- hero -->
-      <div class="header relative flex h-[700px] w-full">
+      <div class="header relative flex h-[800px] md:h-[700px] w-full">
         <div class="bg-white h-full w-[60%]"></div>
         <div class="bg-[#FBB4D8] h-full w-[40%] pinkbg"></div>
         <div class="absolute z-10 w-full">
@@ -91,7 +91,7 @@
                   </h1>
 
                   <ul
-                    class="hidden md:flex gap-5 items-center uppercase text-sm"
+                    class="hidden lg:flex gap-5 items-center uppercase text-sm"
                   >
                     <li
                       class="cursor-pointer hover:border-b-2 hover:border-b-[#e95ea3] opacity-80 hover:opacity-100 hover:font-semibold"
@@ -121,14 +121,24 @@
                   </ul>
 
                   <div class="flex gap-6 items-center">
-                  
+                    <img
+                    src="images/profile.png"
+                    class="w-8 cursor-pointer hidden"
+                    id="profile-picture"
+                  />
+                  <img
+                  src="images/profile.png"
+                  class="w-8 cursor-pointer md:hidden"
+                  id="signin-btn"
+                />
                     <a
-                      href="cart-page.html"
+                      href=""
                       class="relative flex justify-center items-center text-sm"
                       id="cart-btn"
-                      onclick="location.href='cart-page.html'"
+                     
                     >
-                      <span
+                     <!-- onclick="location.href='cart-page.html'" -->
+                       <span
                         class="absolute z-10 self-center -top-3 right-0 bg-[#db2777] rounded-full p-[1px] px-2 text-[11px] text-white"
                         id="js-cart-quantity"
                       ></span>
@@ -138,50 +148,59 @@
                     /></a>
 
                     <button
-                      class="hidden md:flex p-3 px-10 bg-[#e95ea3] uppercase rounded-full text-white font-bold opacity-90 hover:opacity-100"
+                      class="hidden md:flex p-2 px-10 bg-[#e95ea3] uppercase mb-2 rounded-full text-white font-bold opacity-90 hover:opacity-100"
                       id="signin-btn"
                     >
                       Sign in
                     </button>
+                  
                   </div>
                 </div>
               </nav>
             </div>
           </div>
 
-          <section class="section" id="section--0">
+          <section class="section sm:w-[78%] flex justify-center items-center mx-auto" id="section--0">
             <!-- toast -->
             <div id="toastBox"></div>
 
             <div
-              class="flex flex-col-reverse md:flex-row mt-20 justify-center items-center mx-auto gap-6"
+              class="flex flex-col md:flex-row mt-32 lg:mt-24 justify-center items-center mx-auto gap-6 w-full"
             >
               <div
-                class="flex flex-col justify-center pl-5 lg:pl-28 gap-7 px-4 md:px-0 w-full md:w-[42%] items-center"
+                class="flex flex-col justify-center  gap-7 px-4 md:px-0 w-full  items-center"
               >
                 <h1
-                  class="textSize text-6xl md:text-7xl self-start font-bold text-left text-[#e95ea3]"
+                  class="textSize text-6xl lg:text-7xl self-start font-bold text-left text-[#e95ea3]"
                 >
                   Gain
-                  <span class="highlight">Weight</span>
+                  <span class="">Weight</span>
                   <br />
 
-                  The <span class="pt-2">Right</span>
-                  <br class="hidden md:flex" />
+                  The <span class="">Right</span>
+                
                   Way
                 </h1>
+
+                
 
                 <p class="self-start">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Eveniet culpa quo reiciendis sed vitae voluptatibus at
                   laudantium necessitatibus officiis fugiat.
                 </p>
+                <button
+                class="hidden md:flex self-start p-3 px-10 bg-[#e95ea3] rounded-full text-white font-bold opacity-90 hover:opacity-100"
+            
+              >
+               Get Started
+              </button>
               </div>
 
               <!-- image -->
 
-              <div class="w-full md:w-[50%] flex justify-center items-center">
-                <img src="images/img (9).png" class="w-[270px] md:w-[520px]" />
+              <div class="w-full flex justify-center items-center">
+                <img src="images/img (9).png" class="w-[220px] xs:w-[310px] sm:w-[370px] md:w-[520px]" />
               </div>
             </div>
           </section>
@@ -334,7 +353,7 @@
         id="section--1"
       >
         <div
-          class="w-full lg:w-[78%] flex flex-col gap-10 md:flex-row px-7 md:px-0 justify-between items-center"
+          class="w-full md:w-[85%] lg:w-[78%] flex flex-col gap-10 md:flex-row px-7 md:px-0 justify-between items-center"
         >
           <div class="">
             <img
@@ -370,7 +389,7 @@
             </button> -->
 
             <button
-              class="p-2 px-10 bg-[#db2777] uppercase rounded-full text-white font-bold opacity-90 mt-3 hover:opacity-100 text-sm"
+              class="p-3 px-10 bg-[#db2777] uppercase rounded-full text-white font-bold opacity-90 mt-3 hover:opacity-100 text-sm"
             >
               Buy Now &#8594;
             </button>
@@ -383,7 +402,7 @@
         class="section bg-[#FBB4D8] bg-opacity-20 mb-10 flex items-center justify-center mx-auto pt-10 pb-20 md:px-0"
         id="section--2"
       >
-        <div class="w-full lg:w-[78%] px-10 lg:px-0">
+        <div class="w-full md:w-[85%] lg:w-[78%] px-6 lg:px-0">
           <span class="font-bold text-[#e95ea3]">WHY NEXORA</span>
 
           <h2 class="flex gap-7 text-3xl text-[#db2777]">
@@ -391,7 +410,7 @@
             <span class="text-2xl font-bold uppercase relative">
               <img
                 src="images/name3.png"
-                class="w-6 absolute z-10 -left-[17px] -top-1"
+                class="w-6 absolute -left-[17px] -top-1"
               />
               NEXORA
             </span>
@@ -401,74 +420,74 @@
             class="grid grid-cols-2 md:grid-cols-3 w-full justify-center items-center gap-10 sm:gap-16 mt-7"
           >
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (3).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (3).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+              <h3 class="pt-2 font-bold  text-base md:text-[22px] text-[#db2777]">
                 Clinically Studied
               </h3>
-              <p class="pt-3">
+              <p class="pt-3 text-sm md:text-base">
                 We use the finest quality of natural, well-researched
                 ingredients you can actually pronounce.
               </p>
             </div>
 
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (8).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (8).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+              <h3 class="pt-2 font-bold text-base md:text-[22px] text-[#db2777]">
                 Vegeterian Friendly
               </h3>
-              <p class="pt-3">
+              <p class="pt-3 text-sm md:text-base">
                 We strive to offer vegeterian friendly options across all of our
                 products.
               </p>
             </div>
 
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (4).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (4).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+              <h3 class="pt-2 font-bold text-base md:text-[22px] text-[#db2777]">
                 Made in UK
               </h3>
-              <p class="pt-3">
+              <p class="pt-3 text-sm md:text-base">
                 Choose supplements manufactured locally using the highest of
                 standards.
               </p>
             </div>
 
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (5).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (5).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+              <h3 class="pt-2 font-bold text-base md:text-[22px] text-[#db2777]">
                 Free Shipping
               </h3>
-              <p class="pt-3">
+              <p class="pt-3 text-sm md:text-base">
                 We offer free shipping on all orders, no exceptions.
               </p>
             </div>
 
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (1).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (1).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">No Risk</h3>
-              <p class="pt-3">
+              <h3 class="pt-2 font-bold text-base md:text-[22px] text-[#db2777]">No Risk</h3>
+              <p class="pt-3 text-sm md:text-base">
                 Rest assured with a 60 day money back guarantee on all products.
               </p>
             </div>
 
             <div class="">
-              <h1 class="bg-white p-4 rounded-tl-3xl rounded-br-3xl w-fit">
-                <img src="./images/icons (2).png" class="w-7" />
+              <h1 class="bg-white p-3 md:p-4 rounded-tl-3xl rounded-br-3xl w-fit">
+                <img src="./images/icons (2).png" class="w-6 md:w-7" />
               </h1>
-              <h3 class="pt-2 font-bold text-[22px] text-[#db2777]">
+              <h3 class="pt-2 font-bold text-base md:text-[22px] text-[#db2777]">
                 GMO Free
               </h3>
-              <p class="pt-3">All our formulas are free of GMOs.</p>
+              <p class="pt-3 text-sm md:text-base">All our formulas are free of GMOs.</p>
             </div>
           </div>
         </div>
@@ -488,7 +507,7 @@
             </p>
           </div>
           <div
-            class="js-products-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-12 mt-8"
+            class="js-products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-12 mt-8"
           ></div>
         </div>
       </section>
@@ -496,12 +515,12 @@
       <!-- ingredients -->
 
       <section
-        class="section w-full lg:w-[78%] flex justify-center items-center mx-auto py-20 px-7 md:px-0"
+        class="section w-full md:w-[85%] lg:w-[78%] flex justify-center items-center mx-auto py-20 px-7 lg:px-0"
         id="section--4"
       >
         <div class="flex flex-col">
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-10"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 "
           >
             <div class="md:col-span-2 w-[90%]">
               <h2
@@ -555,14 +574,14 @@
       <!-- reviews -->
 
       <section
-        class="section bg-[#FBB4D8] bg-opacity-20 mt-10 mb-64 flex items-center justify-center mx-auto pt-16 pb-96 relative px-7 md:px-0"
+        class="section bg-[#FBB4D8] bg-opacity-20 md:mt-10 mb-64 flex items-center justify-center mx-auto pt-16 pb-72 lg:pb-96 relative px-7 lg:px-0"
         id="section--5"
       >
         <div
-          class="w-full md:w-[78%] flex flex-col items-center justify-center mx-auto"
+          class="w-full md:w-[85%] lg:w-[78%] flex flex-col items-center justify-center mx-auto"
         >
           <div
-            class="text-center w-full md:w-[50%] flex flex-col justify-center items-center"
+            class="text-center w-full lg:w-[50%] flex flex-col justify-center items-center"
           >
             <h2 class="textSize text-[#e95ea3] font-bold uppercase">
               TESTIMONIALS
@@ -572,17 +591,17 @@
             </h1>
           </div>
 
-          <div class="mt-20 flex flex-col md:flex-row gap-20 md:gap-6">
+          <div class="mt-20 flex flex-col lg:flex-row gap-20 lg:gap-6">
             <div class="bg-white flex items-center w-fit h-[170px]">
               <div class="h-[200px] bg-white">
                 <img
                   src="images/person.png"
                   alt=""
-                  class="w-[200px] h-full shadow-2xl"
+                  class="w-[250px] md:w-[200px] h-full shadow-2xl"
                 />
               </div>
 
-              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-[170px]">
+              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-fit">
                 <h2 class="font-bold text-lg">Nyla Shaw</h2>
                 <span class="text-xs">⭐⭐⭐⭐⭐</span>
                 <p class="pt-4 text-[13px] md:text-[15px]">
@@ -597,11 +616,11 @@
                 <img
                   src="images/person.png"
                   alt=""
-                  class="w-[200px] h-full shadow-2xl"
+                  class="w-[250px] md:w-[200px] h-full shadow-2xl"
                 />
               </div>
 
-              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-[170px]">
+              <div class="p-4 md:p-10 py-6 w-fit md:w-[300px] h-fit">
                 <h2 class="font-bold text-lg">Nyla Shaw</h2>
                 <span class="text-xs">⭐⭐⭐⭐⭐</span>
                 <p class="pt-4 text-[13px] md:text-[15px]">
@@ -616,7 +635,7 @@
         <!-- newsletter -->
 
         <section
-          class="section w-full lg:w-[78%] bg-[#FBB4D8] p-10 flex flex-col justify-center items-center mx-auto mb-4 md:mb-20 absolute -bottom-60 md:-bottom-80"
+          class="section w-full lg:w-[78%] bg-[#FBB4D8] p-10 flex flex-col justify-center items-center mx-auto mb-4 md:mb-14 lg:mb-20 absolute -bottom-60 lg:-bottom-80"
         >
           <div
             class="flex flex-col md:flex-row gap-40 relative h-fit lg:h-[350px] w-full"
@@ -674,7 +693,7 @@
       <footer class="mt-6 section">
         <div class="pt-10">
           <div
-            class="mb-10 flex flex-col md:flex-row md:justify-between gap-7 md:gap-4 w-[78%] mx-auto"
+            class="mb-10 flex flex-col md:flex-row md:justify-between gap-7 md:gap-4 w-[90%] px-5 md:px-0 lg:w-[78%] mx-auto"
           >
             <span class="">
               <h1

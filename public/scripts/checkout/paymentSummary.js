@@ -259,12 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   }
 // }
 
-// export function congratulatoryMsg() {
-//   alert(
-//     "Your order is confirmed, and we're already preparing it for you. Thanks for shopping with us!"
-//   );
-// }
-
 // // Helper function to calculate the total cost of the cart
 //  function calculateTotalCartCost() {
 //   let totalCost = 0;
