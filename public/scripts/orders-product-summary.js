@@ -2,14 +2,15 @@ import { getProduct } from "../data/products-data.js";
 import { orders } from "../data/orders.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { formatCurrency } from "./utils/money.js";
-import { congratulatoryMsg } from "./checkout/paymentSummary.js";
-congratulatoryMsg();
+// import { congratulatoryMsg } from "./checkout/paymentSummary.js";
+
 // import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 import {
   addToCart,
   calculateCartQuantity,
   updateQuantity,
 } from "../data/cart.js";
+// congratulatoryMsg();
 
 // function generateShortUuid() {
 //   return uuidv4().substring(0, 28); // trim to 28 characters
@@ -18,6 +19,14 @@ import {
 document.addEventListener("DOMContentLoaded", function () {
   loadPage();
 });
+
+function congratulatoryMsg() {
+  alert(
+    "Your order is confirmed, and we're already preparing it for you. Thanks for shopping with us!"
+  );
+}
+
+congratulatoryMsg();
 
 function loadPage() {
   let ordersHTML = "";
@@ -89,7 +98,7 @@ function loadPage() {
           <div class="product-quantity">
             Quantity: ${productDetails.quantity}
           </div>
-          <button class="buy-again-button button-primary js-buy-again" data-product-id="${
+          <button onclick="showToast(successMsg)" class="buy-again-button button-primary js-buy-again" data-product-id="${
             product.id
           }" data-quantity="${productDetails.quantity}">
           
@@ -121,6 +130,11 @@ function loadPage() {
 
   document.querySelectorAll(".js-buy-again").forEach((button) => {
     button.addEventListener("click", () => {
+      // let toastBox = document.getElementById("toastBox");
+      // let successMsg =
+      //   '<img src="images/404-tick.png" class="img-tick"> Added to cart';
+      // showToast(successMsg);
+
       const quantity = parseInt(button.dataset.quantity, 10); // Get the correct quantity
       console.log("Parsed Quantity:", quantity); // Debugging
       addToCart(button.dataset.productId, quantity); // Add to cart with correct quantity

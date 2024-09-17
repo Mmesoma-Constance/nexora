@@ -1346,6 +1346,11 @@ video {
   .sm\:gap-16 {
     gap: 4rem;
   }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1371,6 +1376,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-\[300px\] {
@@ -1475,6 +1484,11 @@ video {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

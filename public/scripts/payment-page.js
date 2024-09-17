@@ -1,3 +1,5 @@
+import { placeOrder } from "./utils/orderUtils.js";
+
 let btn = document.getElementById("btn");
 let password = document.querySelector(".password");
 let eyeicon = document.getElementById("eyeicon");
@@ -116,6 +118,13 @@ function redirectToOrderPage(
   }
 }
 
+// To track if the user has interacted with an input field
+let cardNumberTouched = false;
+let cardHolderTouched = false;
+let bankNameTouched = false;
+let expiryDateTouched = false;
+let cvvTouched = false;
+
 // Save data to localStorage on input change
 cardTypeSelect.addEventListener("change", function () {
   const cardType = cardTypeSelect.value;
@@ -141,6 +150,7 @@ cardTypeSelect.addEventListener("change", function () {
 });
 
 cardNumberInput.addEventListener("input", function (e) {
+  cardNumberTouched = true;
   let input = e.target.value.replace(/\s+/g, ""); // Remove existing spaces
   input = input.replace(/[^0-9]/g, ""); // Remove any non-digit characters
   let formattedInput = input.match(/.{1,4}/g)?.join(" ") || input; // Add space every 4 digits
@@ -150,6 +160,7 @@ cardNumberInput.addEventListener("input", function (e) {
 });
 
 cardHolderInput.addEventListener("input", function () {
+  cardHolderTouched = true;
   const cardHolder = cardHolderInput.value;
   cardHolderDisplay.textContent = cardHolder || "Card Holder";
   localStorage.setItem("cardHolder", cardHolder);
@@ -157,6 +168,7 @@ cardHolderInput.addEventListener("input", function () {
 });
 
 bankNameInput.addEventListener("input", function () {
+  bankNameTouched = true;
   const bankName = bankNameInput.value;
   bankNameDisplay.textContent = bankName || "Bank Name";
   localStorage.setItem("bankName", bankName);
@@ -164,6 +176,7 @@ bankNameInput.addEventListener("input", function () {
 });
 
 expiryDateInput.addEventListener("input", function (e) {
+  expiryDateTouched = true;
   // const expiryDate = expiryDateInput.value;
 
   let expiryDate = e.target.value.replace(/[^0-9/]/g, ""); // Allow only numbers and "/"
@@ -178,8 +191,10 @@ expiryDateInput.addEventListener("input", function (e) {
 });
 
 cvvInput.addEventListener("input", function () {
+  cvvTouched = true;
   let cvv = cvvInput.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
   console.log(cvv); // Allow only numbers
+
   cvvDisplay.textContent = "CVV: " + "*".repeat(cvv.length); // Display asterisks for CVV
   localStorage.setItem("cvv", cvv); // Save CVV to localStorage
   validateForm();
@@ -217,6 +232,17 @@ function validateForm() {
   console.log("Expiry Date Valid:", isValidExpiryDate);
   console.log("CVV Valid:", isValidCvv);
 
+  // Set red border only if the user has interacted with the field
+  if (cardNumberTouched)
+    cardNumberInput.style.borderColor = isValidCardNumber ? "" : "red";
+  if (cardHolderTouched)
+    cardHolderInput.style.borderColor = isValidCardHolder ? "" : "red";
+  if (bankNameTouched)
+    bankNameInput.style.borderColor = isValidBankName ? "" : "red";
+  if (expiryDateTouched)
+    expiryDateInput.style.borderColor = isValidExpiryDate ? "" : "red";
+  if (cvvTouched) cvvInput.style.borderColor = isValidCvv ? "" : "red";
+
   if (
     isValidCardNumber &&
     isValidCardHolder &&
@@ -226,14 +252,23 @@ function validateForm() {
   ) {
     submitBtn.classList.remove("disabled");
     submitBtn.disabled = false;
-    submitBtn.addEventListener("click", () => {
-      location.href = "orders.html";
-    });
   } else {
     submitBtn.classList.add("disabled");
     submitBtn.disabled = true;
   }
 }
+
+submitBtn.addEventListener("click", () => {
+  if (!submitBtn.disabled) {
+    localStorage.setItem("hasPaymentDetails", "true");
+    // if (placeOrder()) {
+    //   location.href = "cart-page.html";
+    // } else {
+    //   alert("Unexpected error. Try again later.");
+    // }
+    location.href = "cart-page.html";
+  }
+});
 
 // function validateForm() {
 //   const cardNumber = cardNumberInput.value.replace(/\s+/g, ""); // Remove spaces for validation
