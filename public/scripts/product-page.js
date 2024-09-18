@@ -184,7 +184,7 @@ if (matchingProduct) {
             <div class="horizontal_slider">
               <div class="slider_container grid grid-cols-3 items-center">
                 <div class="item">
-                  <div class="w-[320px]">
+                  <div class="w-[280px] md:w-[320px]">
                     <figure
                       class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
                       data-product-id="${matchingProduct.similarProducts[0].id}"
@@ -229,7 +229,7 @@ if (matchingProduct) {
                 </div>
 
                 <div class="item">
-                  <div class="w-[320px]">
+                  <div class="w-[280px] md:w-[320px]">
                     <figure
                       class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
                       data-product-id="${matchingProduct.similarProducts[1].id}"
@@ -273,7 +273,7 @@ if (matchingProduct) {
                 </div>
 
                 <div class="item">
-                  <div class="w-[320px]">
+                  <div class="w-[280px] md:w-[320px]">
                     <figure
                       class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
                       data-product-id="${matchingProduct.similarProducts[2].id}"

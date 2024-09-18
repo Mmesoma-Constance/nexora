@@ -123,7 +123,7 @@ export function renderOrderSummary() {
     document.querySelector(".js-order-summary").innerHTML = cartSummaryHTML;
   } else {
     document.querySelector(".js-order-summary").innerHTML =
-      'Your cart is empty! <img src="images/open-box.png" class="w-20">';
+      'Your cart is empty! <img src="images/open-box.png">';
   }
 
   // single product page

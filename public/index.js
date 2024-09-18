@@ -51,10 +51,12 @@ products.forEach((product) => {
                     product.id
                   }"
                 >
-                  <img src="${product.image}" class="w-[250px]" /></figure
+                  <img src="${
+                    product.image
+                  }" class="w-[250px]"  data-aos="zoom-in" /></figure
               >
-              <div class="flex flex-col space-y-2 mt-3">
-                <div class="flex justify-between">
+              <div class="flex flex-col space-y-2 mt-3"  data-aos="zoom-in">
+                <div class="flex justify-between" >
                   <h3 class="text-xl font-bold text-[#db2777]">${
                     product.name
                   }</h3>
