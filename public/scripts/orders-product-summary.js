@@ -78,6 +78,20 @@ function loadPage() {
     }
 
     order.products.forEach((productDetails) => {
+      const deliveryTime = dayjs(productDetails.estimatedDeliveryTime);
+      const today = dayjs();
+
+      let deliveredMessage;
+      if (today.isAfter(deliveryTime)) {
+        deliveredMessage = `Delivered on`;
+      } else if (today.isSame(deliveryTime)) {
+        deliveredMessage = "Out for delivery today!";
+      } else if (today.isSame(deliveryTime.subtract(1, "day"))) {
+        deliveredMessage = "Arriving tomorrow!";
+      } else {
+        deliveredMessage = `Arriving on `;
+      }
+
       const product = getProduct(productDetails.productId);
       // const dateString = calculateDeliveryDate(product);
       // console.log(dateString);
@@ -91,9 +105,9 @@ function loadPage() {
             ${product.name}
           </div>
           <div class="product-delivery-date">
-            Arriving on: ${dayjs(productDetails.estimatedDeliveryTime).format(
-              "MMMM D"
-            )}
+           ${deliveredMessage}: ${dayjs(
+        productDetails.estimatedDeliveryTime
+      ).format("MMMM D")}
           </div>
           <div class="product-quantity">
             Quantity: ${productDetails.quantity}
