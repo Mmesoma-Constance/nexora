@@ -38,12 +38,12 @@ if (matchingProduct) {
           <div class="w-full md:w-[50%] flex justify-center items-center">
             <img
               src="${matchingProduct.image}"
-              class="w-[230px] md:w-[420px]"
+              class="w-[230px] sm:w-[300px] md:w-[420px]"
             />
           </div>
 
           <div
-            class="flex flex-col justify-center pl-5 lg:pl-28 px-4 md:px-0 w-full md:w-[50%] items-center"
+            class="flex flex-col justify-center pl-5 lg:pl-28 px-4 md:px-0 w-full sm:w-[85%] md:w-[50%] items-center"
           >
             <span class="self-start"
               >⭐⭐⭐⭐⭐
@@ -65,14 +65,16 @@ if (matchingProduct) {
             </p>
 
             <p
-              class="quantity-container text-2xl font-bold flex gap-4 self-start mt-6"
+              class="quantity-container text-2xl font-bold flex self-start mt-6"
             >
               <span
                 class="cursor-pointer decrement bg-[#e95ea3] px-4 h-fit text-center text-white"
                 >-</span
-              ><span class="quantity-value-${
-                matchingProduct.id
-              } px-4 h-fit text-center">2</span
+              ><span
+                class="quantity-value-${
+                  matchingProduct.id
+                } px-4 h-fit text-center border-y-[1px] border-y-[#e95ea3] bg-gray-50"
+                >2</span
               ><span
                 class="cursor-pointer increment bg-[#e95ea3] px-4 h-fit text-center text-white"
                 >+</span
@@ -96,19 +98,19 @@ if (matchingProduct) {
           <div class="w-[85%] sm:w-[78%] mx-auto operations">
             <ul class="flex md:gap-10 operations__tab-container">
               <li
-                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
+                class="text-xs sm:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--1 operations__tab--active"
                 data-tab="1"
               >
                 Description
               </li>
               <li
-                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
+                class="text-xs sm:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--2"
                 data-tab="2"
               >
                 Ingredients
               </li>
               <li
-                class="text-xs md:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
+                class="text-xs sm:text-base uppercase cursor-pointer opacity-80 hover:opacity-100 operations__tab operations__tab--3"
                 data-tab="3"
               >
                 How to use
