@@ -1,4 +1,4 @@
-import { products } from "../data/products-data.js";
+import { getProduct, products } from "../data/products-data.js";
 import { singleProductFn } from "../data/single-product.js";
 import { formatCurrency } from "./utils/money.js";
 import { addToCart, calculateCartQuantity } from "../data/cart.js";
@@ -16,6 +16,8 @@ const productId = getProductIdFromUrl(); // Get the productId from the URL
 const matchingProduct = products.find((product) => product.id === productId);
 
 if (matchingProduct) {
+  const similarProductsQuantity = matchingProduct.similarProducts[0].quantity;
+
   // Generating the list of ingredients
   const ingredientsList = matchingProduct.ingredients
     .map((ingredient) => `<li>${ingredient}</li>`)
@@ -83,8 +85,8 @@ if (matchingProduct) {
 
             <button
               onclick="showToast(successMsg)"
-              class="bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase"
-              id="js-add-to-cart"
+              class="bg-[#e95ea3] hover:bg-[#db2777] text-white font-bold text-[15px] p-2.5 px-5 md:px-8 rounded-lg self-start w-full mt-6 uppercase js-add-to-cart"
+             
               data-product-id="${matchingProduct.id}"
             >
               Add to cart
@@ -205,8 +207,10 @@ if (matchingProduct) {
                         <div class="relative btn-container">
                           <button
                             onclick="showToast(successMsg)"
-                            class="btn px-4 text-xs uppercase rounded-full p-2"
-                            id="js-add-to-cart"
+                            class="btn px-4 text-xs uppercase rounded-full p-2 js-add-to-cart similar-product"
+                             data-product-quantity="${
+                               matchingProduct.similarProducts[0].quantity
+                             }"
                             data-product-id="${
                               matchingProduct.similarProducts[0].id
                             }"
@@ -232,7 +236,11 @@ if (matchingProduct) {
                   <div class="w-[280px] md:w-[320px]">
                     <figure
                       class="js-single-product-btn bg-[#FBB4D8] h-[320px] cursor-pointer p-6 flex flex-col justify-center items-center bg-opacity-50"
-                      data-product-id="${matchingProduct.similarProducts[1].id}"
+                      data-product-id="${
+                        matchingProduct.similarProducts[1].id
+                      }" data-product-quantity="${
+    matchingProduct.similarProducts[1].quantity
+  }"
                     >
                       <img
                         src="${matchingProduct.similarProducts[1].image}"
@@ -249,8 +257,10 @@ if (matchingProduct) {
                         <div class="relative btn-container">
                           <button
                             onclick="showToast(successMsg)"
-                            class="btn px-4 text-xs uppercase rounded-full p-2"
-                            id="js-add-to-cart"
+                            class="btn px-4 text-xs uppercase rounded-full p-2 js-add-to-cart similar-product"
+                             data-product-quantity="${
+                               matchingProduct.similarProducts[1].quantity
+                             }"
                             data-product-id="${
                               matchingProduct.similarProducts[1].id
                             }"
@@ -294,8 +304,10 @@ if (matchingProduct) {
                         <div class="relative btn-container">
                           <button
                             onclick="showToast(successMsg)"
-                            class="btn px-4 text-xs uppercase rounded-full p-2"
-                            id="js-add-to-cart"
+                            class="btn px-4 text-xs uppercase rounded-full p-2 js-add-to-cart similar-product"
+                             data-product-quantity="${
+                               matchingProduct.similarProducts[2].quantity
+                             }"
                             data-product-id="${
                               matchingProduct.similarProducts[2].id
                             }"
@@ -340,6 +352,7 @@ if (matchingProduct) {
   const quantitySelector = document.querySelector(
     `.quantity-value-${matchingProduct.id}`
   );
+  console.log(quantitySelector);
 
   let quantity = 1;
   quantitySelector.innerHTML = quantity;
@@ -370,17 +383,19 @@ if (matchingProduct) {
   updateCartQuantity();
 
   // add to cart
-  document.querySelectorAll("#js-add-to-cart").forEach((button) => {
+  document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
       const productId = button.dataset.productId;
-      if (quantity < 20) {
-        addToCart(productId, quantity);
-        console.log(quantity);
+
+      // Check if the button is for similar products
+      if (button.classList.contains("similar-product")) {
+        addToCart(productId, similarProductsQuantity);
+        updateCartQuantity(matchingProduct, similarProductsQuantity);
       } else {
-        alert("Too much items!");
+        addToCart(productId, quantity);
+        updateCartQuantity(matchingProduct, quantity);
       }
 
-      updateCartQuantity(matchingProduct, quantity);
       // document.querySelector(".quantity-container").style.display = "flex";
     });
   });
