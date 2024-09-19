@@ -1653,10 +1653,6 @@ video {
     margin-bottom: 5rem;
   }
 
-  .lg\:mt-24 {
-    margin-top: 6rem;
-  }
-
   .lg\:flex {
     display: flex;
   }

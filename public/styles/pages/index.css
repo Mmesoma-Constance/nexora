@@ -22,6 +22,12 @@
   margin: auto auto;
 }
 
+@media (min-width: 1348px) {
+  .horizontal_slider::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .slider_container {
   display: block;
   white-space: nowrap;

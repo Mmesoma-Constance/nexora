@@ -104,7 +104,7 @@ export const products = [
       {
         id: "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
         image: "images/product-image (4).png",
-        name: "Ginger Root Tablets",
+        name: "Ginger Root Capsules",
         priceCents: 1899,
       },
       {
@@ -122,12 +122,12 @@ export const products = [
     ],
   },
 
-  //   3 Ginger Root Tablets
+  //   3 Ginger Root Capsules
 
   {
     id: "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
     image: "images/product-image (4).png",
-    name: "Ginger Root Tablets",
+    name: "Ginger Root Capsules",
     about:
       "Ginger root tablets support digestion while enhancing appetite, helping you eat more regularly and comfortably. This is perfect for those needing an appetite boost to meet their calorie goals for weight gain.",
     tag: "Appetite Stimulant",
@@ -347,7 +347,7 @@ export const products = [
       {
         id: "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
         image: "images/product-image (4).png",
-        name: "Ginger Root Tablets",
+        name: "Ginger Root Capsules",
         priceCents: 1899,
       },
       {
@@ -464,7 +464,7 @@ export const products = [
       {
         id: "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
         image: "images/product-image (4).png",
-        name: "Ginger Root Tablets",
+        name: "Ginger Root Capsules",
         priceCents: 1899,
       },
     ],
